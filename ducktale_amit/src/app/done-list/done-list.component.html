@@ -1,0 +1,21 @@
+       
+       <div class="container">
+          <div *ngIf="doneList.length != 0">
+              <table>
+                   <tr>
+                   <th>Not done</th>
+                     <th>Repeat</th>
+                     <th>Task Name</th>
+                     <th>Task description</th>
+                    </tr>
+                   <tr *ngFor="let task of doneList ; let i = index">
+                     <td><input type="checkbox"  (change)="removeFromList($event , i)" value="done"></td>
+                     <td> {{task?.repeat}} </td>
+                     <td> {{task?.task_name}} </td>
+                     <td> {{task?.task_description}} </td>
+                     </tr>
+                 </table>
+           </div>
+    
+          </div>
+   
